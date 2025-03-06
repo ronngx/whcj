@@ -1,0 +1,8 @@
+python-docx
+Pillow
+pyautogui
+keyboard
+pandas
+requests
+xlrd
+pywin32
