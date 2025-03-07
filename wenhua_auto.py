@@ -118,6 +118,14 @@ class WenhuaAutoScreenshot:
         """加载合约列表"""
         contracts_file = "contracts.json"
         
+        # 添加用户交互
+        if os.path.exists(contracts_file):
+            update = input("是否需要更新主力合约列表？(y/n): ").lower().strip()
+            if update != 'y':
+                logger.info("使用现有合约列表")
+                with open(contracts_file, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+        
         try:
             # 尝试从openctp.cn获取最新的主力合约信息
             contracts = self.get_main_contracts()
