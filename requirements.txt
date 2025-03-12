@@ -6,3 +6,4 @@ pandas
 requests
 xlrd
 pywin32
+wmi
